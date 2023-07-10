@@ -52,4 +52,14 @@ class BinaryTree:
     - 전위순회 preorder (자식 노드에 가기 전에 자기 자신부터 방문)
     - 중위순회 inorder (left 자식 노드 먼저 방문 후 자기 자신 방문 후 right 노드 방문)
     - 후위순회 postorder (자식 노드 모두 방문 후 자기 자신 방문)
-    
+      ```python
+      def postorder(root):
+        if root is None:
+          return
+
+        left = postorder(root.left)
+        right = postorder(root.right)
+        print(root.value)
+
+      postorder(root)
+      ```
